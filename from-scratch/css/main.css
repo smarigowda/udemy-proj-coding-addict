@@ -18,6 +18,7 @@ body {
 :root {
   --light-blue: #2b98f0;
   --light-gray: #f5f5f5;
+  --link-background: #395e7e;
   --font-family: 'Roboto', sans-serif;
 }
 
@@ -40,12 +41,33 @@ nav {
 
 nav ul {
   list-style-type: none;
+  margin: 0;
+  padding-left: 10px;
+}
+
+@media screen and (min-width: 690px) {
+  nav ul {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  nav ul li {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 nav ul li a {
   display: block;
   color: var(--light-blue);
   text-decoration: none;
+  text-align: center;
   padding: 10px;
   font-size: 20px;
   background: transparent;
@@ -59,10 +81,98 @@ nav ul li a:hover {
   background-color: var(--light-blue);
 }
 
+@media screen and (min-width: 690px) {
+  nav ul li a:hover {
+    padding: 10px !important;
+  }
+}
+
+@media screen and (min-width: 690px) {
+  nav ul li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 125px;
+            flex: 1 0 125px;
+  }
+}
+
+@media screen and (min-width: 690px) {
+  nav ul li.icon {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 1px;
+            flex: 0 0 1px;
+  }
+}
+
+nav ul li .icon--link {
+  color: var(--light-gray);
+  background: var(--link-background);
+}
+
+@media screen and (min-width: 690px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 #banner {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../images/banner-img.jpeg);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/banner-img.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#banner #banner-box {
+  color: var(--light-gray);
+  text-align: center;
+}
+
+#banner #banner-box .banner-title {
+  font-size: 60px;
+  text-transform: capitalize;
+}
+
+#banner #banner-box .banner-underline {
+  width: 200px;
+  border: 3px solid var(--light-blue);
+  margin: 10px auto;
+}
+
+#banner #banner-box .banner-subtitle {
+  font-size: 25px;
+  text-transform: capitalize;
+  margin: 20px 0 40px 0;
+}
+
+#banner #banner-box a {
+  font-size: 40px;
+  background: var(--light-blue);
+  padding: 10px;
+  border: 3px solid var(--light-blue);
+  text-decoration: none;
+  color: var(--light-gray);
+  -webkit-transition: background 3s ease, border .5s ease;
+  transition: background 3s ease, border .5s ease;
+}
+
+#banner #banner-box a:hover {
+  background: transparent;
+  border: 3px solid var(--light-gray);
 }
 
 #nav-top {
@@ -72,12 +182,11 @@ nav ul li a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px;
 }
 
 #nav-top h3 {
   font-size: 30px;
-  padding: 5px;
+  padding: 8px;
   color: var(--light-blue);
   border: 3px solid;
   -webkit-transition: color 2s ease, background-color 2s ease;
@@ -98,7 +207,9 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-#nav-top #menu-btn .bar1, #nav-top #menu-btn .bar2, #nav-top #menu-btn .bar3 {
+#nav-top #menu-btn .bar1,
+#nav-top #menu-btn .bar2,
+#nav-top #menu-btn .bar3 {
   height: 5px;
   width: 35px;
   background-color: var(--light-blue);
@@ -113,8 +224,16 @@ nav ul li a:hover {
   background-color: var(--light-blue);
 }
 
-#nav-top #menu-btn:hover .bar1, #nav-top #menu-btn:hover .bar2, #nav-top #menu-btn:hover .bar3 {
+#nav-top #menu-btn:hover .bar1,
+#nav-top #menu-btn:hover .bar2,
+#nav-top #menu-btn:hover .bar3 {
   background-color: var(--light-gray);
+}
+
+@media screen and (min-width: 690px) {
+  #nav-top #menu-btn {
+    display: none;
+  }
 }
 
 .turn .bar1 {
